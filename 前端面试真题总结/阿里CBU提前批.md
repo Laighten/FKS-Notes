@@ -82,7 +82,6 @@ function flattern(input){
 ```javascript
 function countOfLetters(letter) {
     var ifUpper = a => a >= 'A' && a <= 'Z';
-    var ifLower = a => a >= 'a' && a <= 'z';
     var ifNum = a => a >= '0' && a <= '9';
     var getAtoms = index => {
         let atom = formula[index];
