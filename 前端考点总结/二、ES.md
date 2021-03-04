@@ -16,13 +16,13 @@
 
 ![image-20210301175606921](./img/image-20210301175606921.png)
 
-##### （1）六大基本类型：
+##### （1）七大基本类型：
 
-​	number、null、undefined、boolean、string、Symbol(ES6)
+​	number、null、undefined、boolean、string、Symbol(ES6)、BigInt
 
 ##### （2）引用类型：
 
-​	数组(Array)、对象(Object)、Date、函数（Function）、RegExp
+​	数组(Array)、对象(Object)、Date、函数（Function）
 
 ##### （3）null和undefined的区别
 
@@ -129,11 +129,15 @@ function deepClone(obj){
 
 #### 5、原型和原型链
 
-​	**隐式原型**：proto
-
 ​	**显示原型**：prototype
 
-​	每个class/函数都有显示原型prototype，每个实例都有隐式原型__proto__，实例的__proto__指向对应的class/函数的prototype。
+- 每个class/函数都有显示原型prototype，它默认指向一个Object空对象（即称为原型对象）
+- 原型对象中一个属性constructor，它指向函数对象
+
+​	**隐式原型**：__proto__
+
+- 每个实例都有隐式原型__proto__
+- 实例的__proto__指向对应的class/函数的prototype。
 
 （1）Function是所有函数(function)的父亲，所有函数都是它的实例。
 
@@ -145,7 +149,19 @@ function deepClone(obj){
 
 （5）同时，Function是对象，由(3)可知Function必然有一个地方（即Function.prototype.__proto__）指向Object.prototype。
 
-![原型链](./img/prototype.png)
+**先来看一个简化版的原型链图：**
+
+![image-20210303222509043](./img/image-20210303222509043.png)
+
+再来看一个完整版的：
+
+![](./img/原型与原型链.png)
+
+
+
+<font color='red'>总之，记住一句话：A是B的实例，则A.__ proto __  === B.prototype；只要A是对象，那么A.prototype.__ proto__ 就指向Object.prototype；prototype中的constructor指向的是自己；</font>
+
+https://blog.csdn.net/weixin_41784648/article/details/108252962?spm=1001.2014.3001.5501
 
 #### 6、作用域和闭包
 

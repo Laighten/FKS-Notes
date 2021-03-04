@@ -77,7 +77,17 @@ function flattern(input){
 
 解题思路：
 
-采用栈的思想，每遇到一个左括号就把一个空数组压入栈，之后遇到右括号之前，所有新元素都放入这个空数组，遇到右括号就弹栈，并把被弹出栈的数组里面的元素放入倒数第二个数组里。
+1、定义一个栈stack和一个数组all，数组all用来存放所有构造出的对象。
+
+2、对字符串进行遍历，分为以下几种情况：
+
+- 如果是字母，则利用字母后面的数字构造一个对象，指针往后移。
+
+- 如果是左括号，则构造一个对象并且入栈；
+
+- 如果是右括号，则将当前栈顶的对象出栈，并将对象中的value值乘以括号外面的数字，然后将对象放到数组all中。
+
+3、将all中的所有对象合并后返回
 
 ```javascript
 function countOfLetters(letter) {
@@ -119,15 +129,12 @@ function countOfLetters(letter) {
                 obj['value'] = 1;
             }
             stack[stack.length-1].push(obj);
-        }
-        else if (formula[i] === '(') {
+        }else if (formula[i] === '(') {
             stack.push([]);
             i ++;
-        }
-        else if (formula[i] === ')') {
+        }else if (formula[i] === ')') {
             i ++;
             let multi = getNums(i);
-           
             i += multi.length;
             let left = stack[stack.length-2];
             let right = stack[stack.length-1];

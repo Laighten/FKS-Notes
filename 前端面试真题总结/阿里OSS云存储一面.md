@@ -3,6 +3,9 @@
 #### 1、笔试题：
 
 > //编写一个函数计算 localStorage中的单个item存储的字符串的最大长度 ，
+>
+> Cookie的单个最大存储容量是4KB，localStrage和sessionStorage的单个最大存储容量是5M
+>
 > // localStorage.setItem('key', str), 即求字符串str的最大长度。
 
 ```javascript
@@ -13,7 +16,7 @@ var flag = 0;////标志是否超出
 var testMax = fuction(){
   while(low<=high){
   	const mid = Math.floor((low+high)/2);
-    var testStr = str.reapeat(mid);
+    var testStr = str.reapeat(mid); //将字符串重复mid次
     test();
     if(flag = 1){
     	high = mid-1;
