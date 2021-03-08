@@ -1,6 +1,8 @@
 # FKS-Note
 Frontend-knowledge-structure-Notes（前端知识结构笔记）
 
+![image-20210308180929232](./img/image-20210308180929232.png)
+
 ## 一、前端考点总结课程笔记
 
 #### 1、[HTML和CSS](./前端考点总结/一、HTML和CSS.md)
