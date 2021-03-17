@@ -2,6 +2,8 @@
 
 ​	HTML前端语义化：就比如我们在写html代码的时候，该用div标签的时候用div标签，改用h标签的时候用h标签，该使用li标签的时候用li标签；不要全用div标签去嵌套实现。
 
+![image-20210317152301210](./img/image-20210317152301210.png)
+
 块级元素(display:block/table)：
 
 - div
@@ -35,8 +37,8 @@
 -->
 <style>
     #div1{
-         width:100px;
-         padding:10px;
+        width:100px;
+        padding:10px;
         border:1px soild #ccc;
         margin:10px;
         //box-sizing:border-box;不加的话内容边距是100px,加了的话总体边距是100px
